@@ -1,0 +1,18 @@
+#!/bin/bash
+chmod -R 755 /opt/apps/net.cnki.cajviewer/
+mkdir -p /usr/share/mime/packages
+#mkdir -p $HOME/.local/share/mime/packages
+ln -s /opt/apps/net.cnki.cajviewer/entries/applications/net.cnki.cajviewer.desktop /usr/share/applications/net.cnki.cajviewer.desktop
+cp -f /opt/apps/net.cnki.cajviewer/files/cnki-caj.xml /usr/share/mime/packages
+#cp -f /opt/apps/net.cnki.cajviewer/files/cnki-caj.xml $HOME/.local/share/mime/packages
+#cp -f /opt/apps/net.cnki.cajviewer/files/lib/libreaderex_x64.so /usr/local/lib
+sed -i '$a application/caj=net.cnki.cajviewer.desktop' /usr/share/applications/defaults.list 2>/dev/null
+sed -i '$a application/kdh=net.cnki.cajviewer.desktop' /usr/share/applications/defaults.list 2>/dev/null
+sed -i '$a application/nh=net.cnki.cajviewer.desktop' /usr/share/applications/defaults.list 2>/dev/null
+sed -i '$a application/teb=net.cnki.cajviewer.desktop' /usr/share/applications/defaults.list 2>/dev/null
+sed -i '$a application/caj=net.cnki.cajviewer.desktop' /usr/share/applications/mimeapps.list 2>/dev/null
+sed -i '$a application/kdh=net.cnki.cajviewer.desktop' /usr/share/applications/mimeapps.list 2>/dev/null
+sed -i '$a application/nh=net.cnki.cajviewer.desktop' /usr/share/applications/mimeapps.list 2>/dev/null
+sed -i '$a application/teb=net.cnki.cajviewer.desktop' /usr/share/applications/mimeapps.list 2>/dev/null
+update-mime-database /usr/share/mime
+#update-mime-database $HOME/.local/share/mime

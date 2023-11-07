@@ -1,0 +1,14 @@
+#!/bin/bash
+rm -f /usr/share/applications/net.cnki.cajviewer.desktop
+rm -rf /usr/share/mime/packages/cnki-caj.xml
+rm -f $HOME/Desktop/net.cnki.cajviewer.desktop
+rm -rf /home/*/Desktop/net.cnki.cajviewer.desktop
+sed -i 's/application\/caj=net.cnki.cajviewer.desktop//' /usr/share/applications/defaults.list 2>/dev/null
+sed -i 's/application\/kdh=net.cnki.cajviewer.desktop//' /usr/share/applications/defaults.list 2>/dev/null
+sed -i 's/application\/nh=net.cnki.cajviewer.desktop//' /usr/share/applications/defaults.list 2>/dev/null
+sed -i 's/application\/teb=net.cnki.cajviewer.desktop//' /usr/share/applications/defaults.list 2>/dev/null
+sed -i 's/application\/caj=net.cnki.cajviewer.desktop//' /usr/share/applications/mimeapps.list 2>/dev/null
+sed -i 's/application\/kdh=net.cnki.cajviewer.desktop//' /usr/share/applications/mimeapps.list 2>/dev/null
+sed -i 's/application\/nh=net.cnki.cajviewer.desktop//' /usr/share/applications/mimeapps.list 2>/dev/null
+sed -i 's/application\/teb=net.cnki.cajviewer.desktop//' /usr/share/applications/mimeapps.list 2>/dev/null
+
